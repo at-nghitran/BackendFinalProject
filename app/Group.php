@@ -16,5 +16,6 @@ class Group extends Model
       return $this->hasMany(Team::class);
     }
 
-    protected $fillable = ['name', 'team_id', 'number_of_team'];
+    protected $table = 'group';
+    protected $fillable = ['id', 'name', 'team_id', 'number_of_team'];
 }

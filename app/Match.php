@@ -16,5 +16,6 @@ class Match extends Model
       return $this->belongsTo(Prediction::class);
     }
 
-    protected $fillable = ['team1_id', 'team2_id', 'date', 'start_time', 'end_time', 'team1_score', 'team2_score', 'team_win'];
+    protected $table = 'match';
+    protected $fillable = ['id','team1_id', 'team2_id', 'date', 'start_time', 'end_time', 'team1_score', 'team2_score', 'team_win'];
 }

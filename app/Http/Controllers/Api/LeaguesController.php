@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Resources\Json\Resource;
 use App\Leagues;
+use DB;
 
 class LeaguesController extends Controller
 {
@@ -17,6 +20,7 @@ class LeaguesController extends Controller
     {
         //
         return Leagues::all();
+        // return DB::table('leagues')->get();
     }
 
     /**
@@ -27,8 +31,14 @@ class LeaguesController extends Controller
      */
     public function store(Request $request)
     {
-        $league = Leagues::create($request->all());
-        response($league);
+        Leagues::create(request([
+            'name' => request('name'),
+            'group_id' => request('group_id'),
+            'description' => request('description'),
+            'banner' => request('banner')
+        ]));
+
+        // return ($request->name);
     }
 
     /**

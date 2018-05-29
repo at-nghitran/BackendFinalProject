@@ -11,5 +11,7 @@ class Leagues extends Model
       return $this->hasMany(Group::class);
     }
 
+    protected $table = 'leagues';
     protected $fillable = ['name', 'group_id', 'description', 'banner'];
+    // public $timestamp = false;
 }
