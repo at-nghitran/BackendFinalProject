@@ -11,6 +11,6 @@ class Prediction extends Model
       return $this->belongsTo(Match::class);
     }
 
-    protected $table = 'prediction';
+    protected $table = 'predictions';
     protected $fillable = ['id','match_id', 'pre_team1', 'pre_team2', 'user_name', 'user_id', 'user_email', 'user_phone'];
 }

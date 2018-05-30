@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Resources\Json\Resource;
-use App\Leagues;
-use DB;
+use App\Team;
 
-class LeaguesController extends Controller
+class TeamsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +15,7 @@ class LeaguesController extends Controller
      */
     public function index()
     {
-        //
-        return Leagues::all();
-        // return DB::table('leagues')->get();
+        return Team::all();
     }
 
     /**
@@ -31,7 +26,7 @@ class LeaguesController extends Controller
      */
     public function store(Request $request)
     {
-        Leagues::create($request->all());
+        Team::create($request->all());
         return response($request->all(), 200)
             ->header('Content-Type', 'text/plain');
     }
@@ -44,8 +39,8 @@ class LeaguesController extends Controller
      */
     public function show($id)
     {
-        $league=Leagues::findOrFail($id);
-        return $league;
+        $team = Team::findOrFail($id);
+        return $team;
     }
 
     /**
@@ -57,9 +52,9 @@ class LeaguesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $league = Leagues::findOrFail($id);
-        $league -> update($request->all());
-        return ($league);
+        $team = Team::findOrFail($id);
+        $team -> update($request->all());
+        return ($team);
     }
 
     /**
@@ -70,8 +65,8 @@ class LeaguesController extends Controller
      */
     public function destroy($id)
     {
-        $league = Leagues::findOrFail($id);
-        $league -> delete();
+        $team = Team::findOrFail($id);
+        $team -> delete();
         return ('success');
     }
 }

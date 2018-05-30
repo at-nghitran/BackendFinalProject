@@ -16,6 +16,6 @@ class Team extends Model
       return $this->hasMany(Match::class);
     }
 
-    protected $table = 'team';
+    protected $table = 'teams';
     protected $fillable = ['id','name', 'group_id', 'description', 'logo'];
 }

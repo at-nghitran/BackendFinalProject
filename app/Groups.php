@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Groups extends Model
 {
     public function leages()
     {
@@ -16,6 +16,6 @@ class Group extends Model
       return $this->hasMany(Team::class);
     }
 
-    protected $table = 'group';
-    protected $fillable = ['id', 'name', 'team_id', 'number_of_team'];
+    protected $table = 'groups';
+    protected $fillable = ['name', 'team_id', 'number_of_team'];
 }

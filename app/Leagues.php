@@ -13,5 +13,5 @@ class Leagues extends Model
 
     protected $table = 'leagues';
     protected $fillable = ['name', 'group_id', 'description', 'banner'];
-    // public $timestamp = false;
+    // protected $hidden = ['created_at'];
 }
