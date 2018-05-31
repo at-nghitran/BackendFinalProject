@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Match extends Model
+class Matchs extends Model
 {
     public function team()
     {
@@ -16,6 +16,6 @@ class Match extends Model
       return $this->belongsTo(Prediction::class);
     }
 
-    protected $table = 'matchs';
+    protected $table = 'matches';
     protected $fillable = ['id','team1_id', 'team2_id', 'date', 'start_time', 'end_time', 'team1_score', 'team2_score', 'team_win'];
 }

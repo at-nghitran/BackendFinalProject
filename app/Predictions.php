@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Prediction extends Model
+class Predictions extends Model
 {
     public function match()
     {
